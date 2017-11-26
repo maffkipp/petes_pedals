@@ -6,6 +6,7 @@ import {
   Switch,
   NavLink
 } from 'react-router-dom';
+import client from './contentfulClient.js';
 
 import Home from './components/Home.js';
 import Repair from './components/Repair.js';
@@ -17,9 +18,32 @@ import NotFound from './components/NotFound.js';
 
 // Top level component, contains navbar and promary router
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    }
+  }
+
+  componentDidMount() {
+    // Get all data from contentful
+    client.getEntries()
+    .then(entries => {
+      let tempArr = [];
+      entries.items.forEach(entry => {
+        if (entry.fields.title) {
+          tempArr.push(entry);
+        }
+      });
+      this.setState({
+        data: tempArr
+      });
+    });
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Router>
           <div>
             <nav>
@@ -31,11 +55,11 @@ class App extends Component {
               <NavLink to='/about' className='navlink'>About/Contact</NavLink>
             </nav>
             <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/repair' component={Repair}/>
-              <Route path='/builds' component={Builds}/>
-              <Route path='/mods' component={Mods}/>
-              <Route path='/news' component={News}/>
+              <Route exact path='/' component={(props) => <Home data={this.state.data} />} />
+              <Route path='/repair' component={(props) => <Repair data={this.state.data} />}/>
+              <Route path='/builds' component={(props) => <Builds data={this.state.data} />}/>
+              <Route path='/mods' component={(props) => <Mods data={this.state.data} />}/>
+              <Route path='/news' component={(props) => <News data={this.state.data} />}/>
               <Route path='/about' component={About}/>
               <Route path='/*' component={NotFound}/>
             </Switch>

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../css/Mods.css';
 
 class Mods extends Component {
   render() {
     return(
-      <div className='Mods'>
+      <div className='mods'>
         <h1>Mods Component...</h1>
       </div>
     )

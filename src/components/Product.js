@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import '../css/Post.css';
+import '../css/Product.css';
 
-class Post extends Component {
+class Product extends Component {
   render() {
     return(
-      <article className='post'>
-        <img src={this.props.data.fields.featuredImage.fields.file.url} alt='#' />
+      <article>
+        <img src={this.props.data.fields.headPhoto.fields.file.url} alt='#' />
         <h3>{this.props.data.fields.title}</h3>
         <p>{this.props.data.fields.description}</p>
       </article>
@@ -13,4 +13,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Product;
