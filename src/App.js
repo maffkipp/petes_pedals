@@ -14,6 +14,9 @@ import Builds from './components/Builds.js';
 import Mods from './components/Mods.js';
 import News from './components/News.js';
 import About from './components/About.js';
+
+import ProductFull from './components/ProductFull.js';
+
 import NotFound from './components/NotFound.js';
 
 // Top level component, contains navbar and promary router
@@ -57,11 +60,15 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={(props) => <Home data={this.state.data} />} />
               <Route path='/repair' component={(props) => <Repair data={this.state.data} />}/>
-              <Route path='/builds' component={(props) => <Builds data={this.state.data} />}/>
+              <Route exact path='/builds' component={(props) => <Builds data={this.state.data} />}/>
               <Route path='/mods' component={(props) => <Mods data={this.state.data} />}/>
               <Route path='/news' component={(props) => <News data={this.state.data} />}/>
               <Route path='/about' component={About}/>
+
+              <Route path='/builds/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
+
               <Route path='/*' component={NotFound}/>
+
             </Switch>
           </div>
         </Router>
