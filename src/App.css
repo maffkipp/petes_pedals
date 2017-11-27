@@ -1,13 +1,37 @@
-* {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.navlink {
-  padding: 10px;
-  font-size: 20px;
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
 nav {
-  padding: 20px 0;
+  background-color: #F44336;
+  padding:10px 0 10px 175px;
+  text-align: left;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.app-navlink {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.app-navlink:hover {
+  background-color: #B71C1C;
+  transition: background-color 200ms;
+  text-decoration: underline;
+}
+
+.app-logo {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  left: 20px;
+  top: 3px;
+  border-radius: 100%;
+  border: 3px solid #F44336;
+}
+
+.active {
+  text-decoration: underline;
 }

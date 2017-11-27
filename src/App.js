@@ -47,25 +47,28 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <img className='app-logo' src={require('./images/logo.jpg')} alt='logo' />
         <Router>
           <div>
             <nav>
-              <NavLink exact to='/' className='navlink'>Home</NavLink>
-              <NavLink to='/repair' className='navlink'>Repair & Restoration</NavLink>
-              <NavLink to='/builds' className='navlink'>Builds</NavLink>
-              <NavLink to='/mods' className='navlink'>Mods</NavLink>
-              <NavLink to='/news' className='navlink'>News</NavLink>
-              <NavLink to='/about' className='navlink'>About/Contact</NavLink>
+              <NavLink exact to='/' className='app-navlink'>Home</NavLink>
+              <NavLink to='/repair' className='app-navlink'>Repair & Restoration</NavLink>
+              <NavLink to='/builds' className='app-navlink'>Builds</NavLink>
+              <NavLink to='/mods' className='app-navlink'>Mods</NavLink>
+              <NavLink to='/news' className='app-navlink'>News</NavLink>
+              <NavLink to='/about' className='app-navlink'>About/Contact</NavLink>
             </nav>
             <Switch>
               <Route exact path='/' component={(props) => <Home data={this.state.data} />} />
-              <Route path='/repair' component={(props) => <Repair data={this.state.data} />}/>
+              <Route exact path='/repair' component={(props) => <Repair data={this.state.data} />}/>
               <Route exact path='/builds' component={(props) => <Builds data={this.state.data} />}/>
-              <Route path='/mods' component={(props) => <Mods data={this.state.data} />}/>
+              <Route exact path='/mods' component={(props) => <Mods data={this.state.data} />}/>
               <Route path='/news' component={(props) => <News data={this.state.data} />}/>
               <Route path='/about' component={About}/>
 
               <Route path='/builds/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
+              <Route path='/mods/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
+              <Route path='/repair/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
 
               <Route path='/*' component={NotFound}/>
 
