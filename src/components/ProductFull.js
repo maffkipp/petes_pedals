@@ -8,8 +8,7 @@ class ProductFull extends Component {
       headPhoto: '',
       additionalPhotos: [],
       title: '',
-      description: '',
-      inStock: true,
+      body: '',
       reverbLink: ''
     }
     this.getDataFromId = this.getDataFromId.bind(this);
@@ -27,7 +26,7 @@ class ProductFull extends Component {
           headPhoto: result.fields.headPhoto.fields.file.url,
           additionalPhotos: result.fields.additionalPhotos,
           title: result.fields.title,
-          description: result.fields.description,
+          body: result.fields.body,
           inStock: result.fields.inStock,
           reverbLink: result.fields.reverbLink
         });
@@ -49,6 +48,12 @@ class ProductFull extends Component {
     }
   }
 
+  addReverbLink(link) {
+    if (link) {
+      return <a href={link}>Reverb</a>
+    }
+  }
+
   render() {
     return (
       <div>
@@ -57,9 +62,9 @@ class ProductFull extends Component {
         <div className='full-page-photo-container'>
           {this.populateAdditionalImages(this.state.additionalPhotos)}
         </div>
-        <p>{this.state.description}</p>
+        <p>{this.state.body}</p>
         <p>{this.state.inStock}</p>
-        <a href={this.state.reverbLink}>Reverb</a>
+        {this.addReverbLink(this.state.reverbLink)}
       </div>
     )
   }

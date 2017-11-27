@@ -2,8 +2,8 @@
 // Contains keys for clientful call; import to pull data
 const contentful = require('contentful');
 const client = contentful.createClient({
-  space: 'u3y85rtp76tx',
-  accessToken: '1b1172d00f715a22c027b99b1b30ffe27750aacf1578ba329f82b7803bcbb963'
+  space: 'wbyi9zmjrqlf',
+  accessToken: '5fafd0138a2ed1ed810c131912f54b0b63d01398289eb7f2280a7dce56ddafd6'
 });
 
 export default client;

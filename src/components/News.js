@@ -9,9 +9,8 @@ class News extends Component {
 
   createPosts(results) {
     // Format data as Post components
-    console.log(results)
     let postArray = results.map(result => {
-      if (result.sys.contentType.sys.id === 'post') {
+      if (result.sys.contentType.sys.id === 'news') {
         return(
           <Post key={result.sys.id} data={result} />
         )

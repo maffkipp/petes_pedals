@@ -19,7 +19,7 @@ class Product extends Component {
           alt={this.props.data.fields.title}
         />
         <h3>{this.props.data.fields.title}</h3>
-        <p>{this.shortenText(this.props.data.fields.description)}</p>
+        <p>{this.shortenText(this.props.data.fields.body)}</p>
       </article>
     )
   }
