@@ -36,15 +36,17 @@ class ProductFull extends Component {
   }
 
   populateAdditionalImages(photos) {
-    let photoArray = photos.map(photo => {
-      return <img
-          key={photo.sys.id}
-          className='full-page-photo full-page-add-photo'
-          src={photo.fields.file.url}
-          alt='#'
-        />
-    });
-    return photoArray;
+    if (photos) {
+      let photoArray = photos.map(photo => {
+        return <img
+            key={photo.sys.id}
+            className='full-page-photo full-page-add-photo'
+            src={photo.fields.file.url}
+            alt='#'
+          />
+      });
+      return photoArray;
+    }
   }
 
   render() {
