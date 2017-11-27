@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/ProductFull.css';
 
+import Gallery from './Gallery.js';
+
 class ProductFull extends Component {
   constructor(props) {
     super(props);
@@ -9,14 +11,18 @@ class ProductFull extends Component {
       additionalPhotos: [],
       title: '',
       body: '',
-      reverbLink: ''
+      reverbLink: '',
+      gallery: null
     }
     this.getDataFromId = this.getDataFromId.bind(this);
+    this.generateGallery = this.generateGallery.bind(this);
   }
 
   componentDidMount() {
     this.getDataFromId(this.props.data);
   }
+
+
 
   getDataFromId(results) {
     const pageId = this.props.propData.match.params.id;
@@ -34,34 +40,25 @@ class ProductFull extends Component {
     });
   }
 
-  populateAdditionalImages(photos) {
-    if (photos) {
-      let photoArray = photos.map(photo => {
-        return <img
-            key={photo.sys.id}
-            className='full-page-photo full-page-add-photo'
-            src={photo.fields.file.url}
-            alt='#'
-          />
-      });
-      return photoArray;
-    }
-  }
-
   addReverbLink(link) {
     if (link) {
       return <a href={link}>Reverb</a>
     }
   }
 
+  generateGallery() {
+      return (
+        <Gallery
+          headPhoto={this.state.headPhoto}
+          additionalPhotos={this.state.additionalPhotos}
+        />)
+  }
+
   render() {
     return (
       <div>
         <h1>{this.state.title}</h1>
-        <img className='full-page-photo full-page-head-photo' src={this.state.headPhoto} alt='#' />
-        <div className='full-page-photo-container'>
-          {this.populateAdditionalImages(this.state.additionalPhotos)}
-        </div>
+        {this.generateGallery()}
         <p>{this.state.body}</p>
         <p>{this.state.inStock}</p>
         {this.addReverbLink(this.state.reverbLink)}
