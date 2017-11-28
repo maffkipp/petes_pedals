@@ -6,15 +6,16 @@
 
 .gallery-head-photo {
   height: 300px;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
 }
 
 .gallery-additional-photo {
   height: 145px;
-  margin: 5px;
+  margin: 5px 4px 1px;
 }
 
 .gallery-additional-photo-container {
   display: inline-flex;
   flex-direction: column;
 }
+
