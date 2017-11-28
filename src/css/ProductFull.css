@@ -7,7 +7,7 @@
   text-align: left;
   font-family: 'Roboto Slab', sans-serif;
   color: #F44336;
-  font-size: 30px;
+  font-size: 24px;
   margin-left: 50px
 }
 
@@ -20,7 +20,9 @@
 }
 
 .product-full-body {
-  padding: 20px 50px;
+  padding: 20px 50px 40px;
+  font-size: 14px;
+  line-height: 1.5;
   color: #757575;
 }
 
@@ -32,7 +34,8 @@
   background-color: #F44336;
   text-decoration: none;
   padding: 5px 10px;
-  margin: 20px 50px;
+  margin: 10px 50px;
+  transition: background-color 200ms, color 200ms;
 }
 
 .product-full-reverb:hover {
@@ -40,6 +43,6 @@
   border: 3px solid #F44336;
   background-color: #FAFAFA;
   color: #F44336;
-  transition: background-color 200ms;
+  transition: background-color 200ms, color 200ms;
 }
 

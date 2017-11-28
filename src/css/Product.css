@@ -14,7 +14,7 @@
 }
 
 .product-image {
-  width: 150px;
+  width: 100px;
   height: auto;
   margin: 20px 0;
 }
@@ -28,13 +28,14 @@
 
 .product-title {
   font-family: 'Roboto Slab', sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   margin: 0 0 5px;
   color: #F44336;
 }
 
 .product-body {
   margin: 0;
+  font-size: 14px;
   color: #757575;
 }
 

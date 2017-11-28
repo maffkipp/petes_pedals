@@ -1,5 +1,7 @@
 .gallery {
   margin: 20px 50px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .gallery-head-photo {
@@ -8,6 +10,11 @@
 }
 
 .gallery-additional-photo {
-  height: 150px;
+  height: 145px;
   margin: 5px;
+}
+
+.gallery-additional-photo-container {
+  display: inline-flex;
+  flex-direction: column;
 }

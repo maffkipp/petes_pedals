@@ -71,8 +71,10 @@ class Gallery extends Component {
       <div className='gallery'>
         <a onClick={this.openLightbox}>
           <img className='gallery-head-photo' src={this.props.headPhoto} />
-          {this.populateAdditionalImages(this.props.additionalPhotos)}
         </a>
+        <div className='gallery-additional-photo-container'>
+          {this.populateAdditionalImages(this.props.additionalPhotos)}
+        </div>
         <Lightbox
           currentImage={this.state.currentImage}
           images={imageArray}

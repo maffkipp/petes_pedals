@@ -59,8 +59,8 @@ class ProductFull extends Component {
         <div className='product-full-container'>
           <h1 className='product-full-title' >{this.state.title}</h1>
           {this.generateGallery()}
-          <p className='product-full-body' >{this.state.body}</p>
           {this.addReverbLink(this.state.reverbLink)}
+          <p className='product-full-body' >{this.state.body}</p>
         </div>
       </div>
     )
