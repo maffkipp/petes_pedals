@@ -8,3 +8,9 @@
   color: #F44336;
   font-size: 40px;
 }
+
+.home-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -20px;
+}

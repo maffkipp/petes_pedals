@@ -1,0 +1,41 @@
+.home-display {
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: box-shadow 200ms;
+}
+
+.home-display:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: box-shadow 200ms;
+}
+
+.home-display-title {
+  font-size: 28px;
+}
+
+.home-display-image {
+  height: 200px;
+  margin-top: 20px;
+}
+
+.home-display-subtitle {
+ font-size: 18px;
+}
+
+.red {
+  background-color: #F44336;
+  color: #FAFAFA;
+}
+
+.white {
+  background-color: #FAFAFA;
+  color: #F44336;
+}
+
+.home-display-link {
+  text-decoration: none;
+}
