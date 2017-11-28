@@ -34,14 +34,24 @@ nav {
 }
 
 .app-logo {
-  position: absolute;
-  height: 150px;
-  width: 150px;
+  position: fixed;
+  height: 140px;
+  width: 140px;
   left: 20px;
   top: 3px;
   border-radius: 100%;
   border: 3px solid #F44336;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  opacity: 0.8;
+  transition: height 200ms, width 200ms, box-shadow 200ms, opacity 200ms;
+}
+
+.app-logo:hover {
+  height: 155px;
+  width: 155px;
+  opacity: 1;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: height 200ms, width 200ms, box-shadow 200ms, opacity 200ms;
 }
 
 .app-title-link {
@@ -55,9 +65,6 @@ nav {
   line-height: .75;
 }
 
-.app-title-link:hover {
-  font-size: 24px;
-}
 
 .app-homelink {
   padding: 0;
