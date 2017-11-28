@@ -20,15 +20,17 @@ class Gallery extends Component {
     if (photos) {
       let value = 0;
       let photoArray = photos.map(photo => {
-        value++;
-        return (
-        <a key={photo.sys.id} onClick={() => this.openLightbox(value)}>
-          <img
-            className='gallery-additional-photo'
-            src={photo.fields.file.url}
-            alt='#'
-          />
-        </a>)
+        if (photo.fields) {
+          value++;
+          return (
+          <a key={photo.sys.id} onClick={() => this.openLightbox(value)}>
+            <img
+              className='gallery-additional-photo gallery-hover'
+              src={photo.fields.file.url}
+              alt='#'
+            />
+          </a>)
+        }
       });
       return photoArray;
     }
@@ -37,17 +39,19 @@ class Gallery extends Component {
   populateLightboxImages(photos) {
     if (photos) {
       let photoArray = photos.map(photo => {
-        return {src: photo.fields.file.url}
+        if (photo.fields) {
+          return {src: photo.fields.file.url}
+        }
       });
       photoArray.unshift({src: this.props.headPhoto});
       return photoArray;
     } else return [{src: this.props.headPhoto}];
   }
 
-  openLightbox(num) {
+  openLightbox(value) {
     this.setState({
       lightboxIsOpen: true,
-      currentImage: num
+      currentImage: value
     });
   }
 
@@ -75,7 +79,7 @@ class Gallery extends Component {
     return (
       <div className='gallery'>
         <a onClick={() => this.openLightbox(0)}>
-          <img value={0} className='gallery-head-photo' src={this.props.headPhoto} />
+          <img className='gallery-head-photo gallery-hover' src={this.props.headPhoto} />
         </a>
         <div className='gallery-additional-photo-container'>
           {this.populateAdditionalImages(this.props.additionalPhotos)}

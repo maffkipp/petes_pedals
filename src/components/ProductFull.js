@@ -34,7 +34,6 @@ class ProductFull extends Component {
           body: result.fields.body,
           reverbLink: result.fields.reverbLink,
         });
-        console.log(this.state.date);
       }
     });
   }

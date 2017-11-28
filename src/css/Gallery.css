@@ -9,6 +9,10 @@
   margin: 5px 5px 5px 0;
 }
 
+.gallery-hover:hover {
+  cursor: pointer;
+}
+
 .gallery-additional-photo {
   height: 145px;
   margin: 5px 4px 1px;
