@@ -50,8 +50,9 @@ class App extends Component {
         <Router>
           <div>
             <nav>
-              <NavLink exact to='/'>
+              <NavLink className='app-navlink app-homelink' exact to='/'>
                 <img className='app-logo' src={require('./images/logo.jpg')} alt='logo' />
+                <h2 className='app-title-link'>Pete's Pedals</h2>
               </NavLink>
               <NavLink to='/repair' className='app-navlink'>Repairs & Restorations</NavLink>
               <NavLink to='/builds' className='app-navlink'>Custom Pedals</NavLink>

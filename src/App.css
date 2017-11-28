@@ -20,11 +20,17 @@ nav {
   text-decoration: none;
   padding: 10px;
   margin: 0 10px;
+  transition: background-color 200ms;
 }
 
 .app-navlink:hover {
   background-color: #B71C1C;
   transition: background-color 200ms;
+}
+
+.active {
+  padding-bottom: 7px;
+  border-bottom: 3px solid #FAFAFA;
 }
 
 .app-logo {
@@ -38,7 +44,23 @@ nav {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.active {
-  padding-bottom: 7px;
-  border-bottom: 3px solid #FAFAFA;
+.app-title-link {
+  position: absolute;
+  left: 175px;
+  top: -3px;
+  font-family: 'Chalkduster', sans-serif;
+  color: #FAFAFA;
+  display: inline;
+  font-size: 20px;
+  line-height: .75;
 }
+
+.app-title-link:hover {
+  font-size: 24px;
+}
+
+.app-homelink {
+  padding: 0;
+}
+
+
