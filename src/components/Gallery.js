@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-images';
+import '../css/Gallery.css';
 
 class Gallery extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Gallery extends Component {
       let photoArray = photos.map(photo => {
         return <img
             key={photo.sys.id}
-            className='full-page-photo full-page-add-photo'
+            className='gallery-additional-photo'
             src={photo.fields.file.url}
             alt='#'
           />
@@ -67,9 +68,9 @@ class Gallery extends Component {
   render() {
     const imageArray = this.populateLightboxImages(this.props.additionalPhotos);
     return (
-      <div>
+      <div className='gallery'>
         <a onClick={this.openLightbox}>
-          <img src={this.props.headPhoto} />
+          <img className='gallery-head-photo' src={this.props.headPhoto} />
           {this.populateAdditionalImages(this.props.additionalPhotos)}
         </a>
         <Lightbox

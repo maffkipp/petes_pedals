@@ -1,0 +1,13 @@
+.gallery {
+  margin: 20px 50px;
+}
+
+.gallery-head-photo {
+  height: 300px;
+  margin: 5px;
+}
+
+.gallery-additional-photo {
+  height: 150px;
+  margin: 5px;
+}

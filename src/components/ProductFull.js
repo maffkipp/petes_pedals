@@ -41,7 +41,7 @@ class ProductFull extends Component {
 
   addReverbLink(link) {
     if (link) {
-      return <a href={link}>Reverb</a>
+      return <a className='product-full-reverb' href={link}>Purchase on Reverb</a>
     }
   }
 
