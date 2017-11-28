@@ -12,15 +12,17 @@ class Product extends Component {
 
   render() {
     return(
-      <article>
+      <div className='product'>
         <img
           className='product-image'
           src={this.props.data.fields.headPhoto.fields.file.url}
           alt={this.props.data.fields.title}
         />
-        <h3>{this.props.data.fields.title}</h3>
-        <p>{this.shortenText(this.props.data.fields.body)}</p>
-      </article>
+        <div className='product-text-container'>
+          <h3 className='product-title'>{this.props.data.fields.title}</h3>
+          <p className='product-body'>{this.shortenText(this.props.data.fields.body)}</p>
+        </div>
+      </div>
     )
   }
 }

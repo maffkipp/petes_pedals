@@ -18,7 +18,7 @@ class ProductList extends Component {
     let productsArray = results.map(result => {
       if (result.sys.contentType.sys.id === this.props.type) {
         return (
-          <Link key={result.sys.id} to={`/${type}/${result.sys.id}`}>
+          <Link className='product-list-link' key={result.sys.id} to={`/${type}/${result.sys.id}`}>
             <Product data={result} />
           </Link>
         )

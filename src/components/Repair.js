@@ -7,7 +7,7 @@ class Repair extends Component {
   render() {
     return(
       <div className='repair'>
-        <h1>Repair Component...</h1>
+        <h1>Repairs & Restorations</h1>
         <ProductList data={this.props.data} type='repairsAndRestorations' />
       </div>
     )

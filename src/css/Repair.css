@@ -1,4 +1,10 @@
+.repair {
+  margin-left: 200px;
+}
+
 .repair>h1 {
-  text-align: center;
+  text-align: left;
   font-family: 'Roboto Slab', sans-serif;
+  color: #F44336;
+  font-size: 40px;
 }

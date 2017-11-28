@@ -1,0 +1,10 @@
+.not-found {
+  margin-left: 200px;
+}
+
+.not-found>h1 {
+  text-align: left;
+  font-family: 'Roboto Slab', sans-serif;
+  color: #F44336;
+  font-size: 40px;
+}

@@ -47,13 +47,14 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <img className='app-logo' src={require('./images/logo.jpg')} alt='logo' />
         <Router>
           <div>
             <nav>
-              <NavLink exact to='/' className='app-navlink'>Home</NavLink>
-              <NavLink to='/repair' className='app-navlink'>Repair & Restoration</NavLink>
-              <NavLink to='/builds' className='app-navlink'>Builds</NavLink>
+              <NavLink exact to='/'>
+                <img className='app-logo' src={require('./images/logo.jpg')} alt='logo' />
+              </NavLink>
+              <NavLink to='/repair' className='app-navlink'>Repairs & Restorations</NavLink>
+              <NavLink to='/builds' className='app-navlink'>Custom Pedals</NavLink>
               <NavLink to='/mods' className='app-navlink'>Mods</NavLink>
               <NavLink to='/news' className='app-navlink'>News</NavLink>
               <NavLink to='/about' className='app-navlink'>About/Contact</NavLink>

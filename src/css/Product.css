@@ -1,3 +1,39 @@
-.product-image {
-  height: 300px;
+.product {
+  padding: 15px;
+  display: flex;
+  margin: 10px auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: #FAFAFA;
+  align-items: center;
 }
+
+.product:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: box-shadow 200ms;
+}
+
+.product-image {
+  width: 150px;
+  height: 100%;
+  margin: 20px 0;
+}
+
+.product-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 20px;
+}
+
+.product-title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 30px;
+  margin: 0 0 5px;
+  color: #F44336;
+}
+
+.product-body {
+  margin: 0;
+  color: #757575;
+}
+

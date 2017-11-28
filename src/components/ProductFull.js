@@ -33,7 +33,6 @@ class ProductFull extends Component {
           additionalPhotos: result.fields.additionalPhotos,
           title: result.fields.title,
           body: result.fields.body,
-          inStock: result.fields.inStock,
           reverbLink: result.fields.reverbLink
         });
       }
@@ -56,12 +55,13 @@ class ProductFull extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.state.title}</h1>
-        {this.generateGallery()}
-        <p>{this.state.body}</p>
-        <p>{this.state.inStock}</p>
-        {this.addReverbLink(this.state.reverbLink)}
+      <div className='product-full'>
+        <h1 className='product-full-title' >{this.state.title}</h1>
+        <div className='product-full-container'>
+          {this.generateGallery()}
+          <p className='product-full-body' >{this.state.body}</p>
+          {this.addReverbLink(this.state.reverbLink)}
+        </div>
       </div>
     )
   }

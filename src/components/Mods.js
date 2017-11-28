@@ -7,7 +7,7 @@ class Mods extends Component {
   render() {
     return(
       <div className='mods'>
-        <h1>Mods Component...</h1>
+        <h1>Modded Pedals</h1>
         <ProductList data={this.props.data} type='moddedPedals' />
       </div>
     )
