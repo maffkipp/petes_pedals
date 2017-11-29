@@ -8,3 +8,11 @@
   color: #F44336;
   font-size: 40px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .not-found>h1 {
+    text-align: center;
+    margin-left: 15px;
+  }
+}

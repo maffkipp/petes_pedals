@@ -61,3 +61,16 @@
   }
 }
 
+
+@media only screen and (max-width: 600px) {
+  .product-full-title {
+    margin-left: 5px;
+  }
+  .product-full-reverb {
+    margin-left: 5px;
+  }
+  .product-full-body {
+    padding: 20px 10px 40px 5px;
+  }
+}
+

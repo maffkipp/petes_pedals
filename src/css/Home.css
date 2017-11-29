@@ -34,4 +34,8 @@
   .home-container-second {
     flex-direction: column-reverse;
   }
+  .home>h1 {
+    text-align: center;
+    margin-left: 15px;
+  }
 }
