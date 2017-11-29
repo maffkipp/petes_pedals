@@ -52,3 +52,12 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .product-full-container {
+    width: 100%;
+  }
+  .product-full {
+    margin-left: 0;
+  }
+}
+
