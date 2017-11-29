@@ -55,6 +55,7 @@
 @media only screen and (max-width: 800px) {
   .product-full-container {
     width: 100%;
+    padding: 10px 0;
   }
   .product-full {
     margin-left: 0;
@@ -64,13 +65,13 @@
 
 @media only screen and (max-width: 600px) {
   .product-full-title {
-    margin-left: 5px;
+    margin-left: 15px;
   }
   .product-full-reverb {
-    margin-left: 5px;
+    margin-left: 15px;
   }
   .product-full-body {
-    padding: 20px 10px 40px 5px;
+    padding: 20px 10px 40px 15px;
   }
 }
 

@@ -26,7 +26,7 @@
 @media only screen and (max-width: 600px) {
   .gallery {
     flex-direction: column;
-    margin: 20px 5px;
+    margin: 20px 15px;
   }
   .gallery-head-photo {
     width: 300px;
