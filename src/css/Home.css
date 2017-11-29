@@ -20,3 +20,12 @@
     margin-left: 10px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .home-container-first {
+    flex-direction: column;
+  }
+  .home-container-second {
+    flex-direction: column-reverse;
+  }
+}
