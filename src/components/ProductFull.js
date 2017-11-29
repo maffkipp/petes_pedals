@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/ProductFull.css';
+import converter from '../showdown.js';
 
 import Gallery from './Gallery.js';
 

@@ -23,3 +23,21 @@
   flex-direction: column;
 }
 
+@media only screen and (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+  }
+  .gallery-head-photo {
+    width: 300px;
+    height: auto;
+  }
+  .gallery-additional-photo-container {
+    flex-direction: row;
+  }
+  .gallery-additional-photo {
+    width: 145px;
+    height: auto;
+    margin: 1px 10px 1px 0px;
+  }
+}
+
