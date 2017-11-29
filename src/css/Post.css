@@ -36,3 +36,15 @@
     padding-right: 0;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .post-title {
+    margin-left: 15px;
+  }
+  .post-date {
+    margin-left: 15px;
+  }
+  .post-body {
+    padding: 20px 15px 40px;
+  }
+}
