@@ -1,0 +1,30 @@
+.post {
+  width: 80%;
+  background-color: #FAFAFA;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin: 10px 0;
+}
+
+.post-title {
+  width: 80%;
+  text-align: left;
+  font-family: 'Roboto Slab', sans-serif;
+  color: #F44336;
+  font-size: 24px;
+  margin-left: 50px;
+}
+
+.post-body {
+  padding: 20px 50px 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #757575;
+}
+
+.post-date {
+  color: #757575;
+  font-size: 12px;
+  margin: -20px 0 0 50px;
+  font-style: italic;
+}

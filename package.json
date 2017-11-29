@@ -2,6 +2,7 @@
   "name": "petes-pedals",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.petespedals.net/",
   "dependencies": {
     "contentful": "^5.0.5",
     "react": "^16.1.1",
