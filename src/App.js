@@ -24,8 +24,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      toggledMenuClass: 'app-invisible'
     }
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +46,18 @@ class App extends Component {
     });
   }
 
+  toggleMenu() {
+    if (this.state.toggledMenuClass === 'app-invisible') {
+      this.setState({
+        toggledMenuClass: 'app-menu-showing'
+      })
+    } else {
+      this.setState({
+        toggledMenuClass: 'app-invisible'
+      })
+    }
+  }
+
   render() {
     return (
       <div className="app">
@@ -54,11 +68,14 @@ class App extends Component {
                 <img className='app-logo' src={require('./images/logo.jpg')} alt='logo' />
                 <h2 className='app-title-link'>Pete's Pedals</h2>
               </NavLink>
-              <NavLink to='/repair' className='app-navlink'>Repairs & Restorations</NavLink>
-              <NavLink to='/builds' className='app-navlink'>Custom Pedals</NavLink>
-              <NavLink to='/mods' className='app-navlink'>Mods</NavLink>
-              <NavLink to='/news' className='app-navlink'>News</NavLink>
-              <NavLink to='/about' className='app-navlink'>Contact</NavLink>
+              <button onClick={this.toggleMenu} className='app-icon-button'>
+                <span className='app-menu-icon fa fa-bars fa-2x'></span>
+              </button>
+              <NavLink to='/repair' className={`app-navlink ${this.state.toggledMenuClass}`}>Repairs & Restorations</NavLink>
+              <NavLink to='/builds' className={`app-navlink ${this.state.toggledMenuClass}`}>Custom Pedals</NavLink>
+              <NavLink to='/mods' className={`app-navlink ${this.state.toggledMenuClass}`}>Mods</NavLink>
+              <NavLink to='/news' className={`app-navlink ${this.state.toggledMenuClass}`}>News</NavLink>
+              <NavLink to='/about' className={`app-navlink ${this.state.toggledMenuClass}`}>Contact</NavLink>
             </nav>
             <Switch>
               <Route exact path='/' component={(props) => <Home data={this.state.data} />} />

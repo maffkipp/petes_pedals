@@ -70,11 +70,49 @@ nav {
   padding: 0;
 }
 
+.app-menu-icon {
+  color: #FAFAFA;
+  display: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.app-icon-button {
+  border: none;
+  display: none;
+  background-color: #F44336;
+  padding: 0 10px;
+  margin: -8px;
+  outline: none;
+}
+
+.app-menu-showing {
+  display: block;
+  text-align: center;
+  border: none;
+  padding: 10px;
+  margin: 5px 0 -10px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 1000px) {
   .app-logo {
     display: none;
   }
   .app-title-link {
     left: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .app-invisible {
+    display: none;
+  }
+  .app-menu-icon {
+    display: inline;
+  }
+  .app-icon-button {
+    display: inline;
   }
 }
