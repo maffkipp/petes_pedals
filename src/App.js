@@ -58,7 +58,7 @@ class App extends Component {
               <NavLink to='/builds' className='app-navlink'>Custom Pedals</NavLink>
               <NavLink to='/mods' className='app-navlink'>Mods</NavLink>
               <NavLink to='/news' className='app-navlink'>News</NavLink>
-              <NavLink to='/about' className='app-navlink'>About/Contact</NavLink>
+              <NavLink to='/about' className='app-navlink'>Contact</NavLink>
             </nav>
             <Switch>
               <Route exact path='/' component={(props) => <Home data={this.state.data} />} />

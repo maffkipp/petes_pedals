@@ -46,3 +46,9 @@
   transition: background-color 200ms, color 200ms;
 }
 
+@media only screen and (max-width: 1000px) {
+  .product-full {
+    margin-left: 10px;
+  }
+}
+

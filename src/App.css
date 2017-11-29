@@ -70,4 +70,13 @@ nav {
   padding: 0;
 }
 
+@media only screen and (max-width: 1000px) {
+  .app-logo {
+    display: none;
+  }
+  .app-title-link {
+    left: 10px;
+  }
+}
+
 
