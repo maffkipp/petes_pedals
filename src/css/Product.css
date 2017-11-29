@@ -43,7 +43,7 @@
   .product {
     width: 100%;
     flex-direction: column;
-    padding-left: 5px;
+    padding: 0;
   }
   .product-image {
     width: 250px;

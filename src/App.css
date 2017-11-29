@@ -95,8 +95,9 @@ nav {
 .app-menu-showing {
   display: block;
   text-align: center;
+  padding-left: 0;
+  padding-right: 0;
   border: none;
-  padding: 10px;
   margin: 5px 0 -10px;
   width: 100%;
 }
@@ -119,5 +120,8 @@ nav {
   }
   .app-icon-button {
     display: inline;
+  }
+  .active {
+    padding-bottom: 10px;
   }
 }
