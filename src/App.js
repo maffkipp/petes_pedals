@@ -54,7 +54,7 @@ class App extends Component {
     } else {
       this.setState({
         toggledMenuClass: 'app-invisible'
-      })
+      });
     }
   }
 
