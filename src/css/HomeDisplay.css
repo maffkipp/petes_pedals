@@ -5,6 +5,7 @@
   margin: 20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: box-shadow 200ms;
+  background-color: #FAFAFA;
 }
 
 .home-display:hover {
@@ -15,6 +16,7 @@
 .home-display-title {
   font-size: 28px;
   font-family: 'Roboto Slab', sans-serif;
+  color: #F44336;
 }
 
 .home-display-image {
@@ -25,16 +27,11 @@
 .home-display-subtitle {
  font-size: 18px;
  margin: 10px 0;
-}
-
-.red {
-  background-color: #F44336;
-  color: #FAFAFA;
+ color: #F44336;
 }
 
 .white {
-  background-color: #FAFAFA;
-  color: #F44336;
+
 }
 
 .home-display-link {
@@ -51,5 +48,12 @@
   .home-display {
     margin: 10px 0;
     width: 100%;
+  }
+  .red {
+    background-color: #F44336;
+    color: #FAFAFA;
+  }
+  .red>.home-display-title, .red>.home-display-subtitle {
+    color: #FAFAFA;
   }
 }

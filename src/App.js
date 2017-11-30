@@ -88,9 +88,7 @@ class App extends Component {
               <Route path='/builds/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
               <Route path='/mods/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
               <Route path='/repair/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
-
               <Route path='/*' component={NotFound}/>
-
             </Switch>
           </div>
         </HashRouter>

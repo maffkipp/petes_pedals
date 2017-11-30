@@ -7,6 +7,7 @@ class About extends Component {
       <div className='about'>
         <h1>About Me</h1>
         <div className='about-body-container'>
+          <img className='about-image' src={require('../images/pedals.jpg')} alt='pedals' />
           <p className='about-body'>Pete’s Pedals started in January of 2014 after I moved from Chapel Hill, NC
            to St Louis.  I had been taking apart, repairing, modifying just about everything
            I could get my hands on from an early age.  I have been working on pedals, amps
@@ -27,6 +28,9 @@ class About extends Component {
           <p className='about-body'>Look for Pete’s Pedals on YouTube for demos of some of my pedals.  Also, find
           and like Pete’s Pedals, St Louis on Facebook for more posts of my work, and for
           first notice on my more popular mods and builds. </p>
+          <p className='about-body'>To reach Pete, send an email to:<br/><br/>
+          petespedals@gmail.com<br/><br/>or, like his Facebook page and message from there:</p>
+          <a className='about-facebook' href='https://www.facebook.com/Petes-Pedals-St-Louis-1539987856307597/'>Find Me on Facebook</a>
         </div>
       </div>
     )

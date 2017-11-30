@@ -9,6 +9,12 @@
   font-size: 40px;
 }
 
+.about-image {
+  width: 400px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
 .about-body-container {
   background-color: #FAFAFA;
   width: 80%;
@@ -18,10 +24,30 @@
 }
 
 .about-body {
-  padding: 20px 50px 40px;
+  padding: 20px 50px;
   font-size: 14px;
   line-height: 1.5;
   color: #757575;
+}
+
+.about-facebook {
+  display: inline-block;
+  text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
+  color: white;
+  background-color: #F44336;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0 50px 50px;
+  transition: background-color 200ms, color 200ms;
+}
+
+.about-facebook:hover {
+  padding: 2px 7px;
+  border: 3px solid #F44336;
+  background-color: #FAFAFA;
+  color: #F44336;
+  transition: background-color 200ms, color 200ms;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -46,5 +72,12 @@
   }
   .about>h1 {
     text-align: center;
+  }
+  .about-image {
+    margin-left: 0;
+    width: 100%;
+  }
+  .about-facebook {
+    margin: 0 15px 50px;
   }
 }
