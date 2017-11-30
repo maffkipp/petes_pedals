@@ -23,8 +23,6 @@ class ProductFull extends Component {
     this.getDataFromId(this.props.data);
   }
 
-
-
   getDataFromId(results) {
     const pageId = this.props.propData.match.params.id;
     results.forEach(result => {
