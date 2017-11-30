@@ -79,9 +79,8 @@
     padding: 20px 10px 40px 15px;
   }
   .product-full-youtube {
-    margin-left: 15px;
-    width: 352px;
-    height: 198px;
+    margin-left: 0;
+    width: 100%;
   }
 }
 
