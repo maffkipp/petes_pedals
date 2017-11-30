@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Route,
   Switch,
   NavLink
@@ -19,7 +19,7 @@ import ProductFull from './components/ProductFull.js';
 
 import NotFound from './components/NotFound.js';
 
-// Top level component, contains navbar and promary router
+// Top level component, contains navbar and primary router
 class App extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +61,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Router>
+        <HashRouter>
           <div>
             <nav>
               <NavLink className='app-navlink app-homelink' exact to='/'>
@@ -93,7 +93,7 @@ class App extends Component {
 
             </Switch>
           </div>
-        </Router>
+        </HashRouter>
       </div>
     );
   }
