@@ -12,7 +12,8 @@ class ProductFull extends Component {
       additionalPhotos: [],
       title: '',
       body: '',
-      reverbLink: ''
+      reverbLink: '',
+      youtubeEmbedLink: ''
     }
     this.getDataFromId = this.getDataFromId.bind(this);
     this.generateGallery = this.generateGallery.bind(this);
@@ -34,6 +35,7 @@ class ProductFull extends Component {
           title: result.fields.title,
           body: result.fields.body,
           reverbLink: result.fields.reverbLink,
+          youtubeEmbedLink: result.fields.youtubeEmbedLink
         });
       }
     });
@@ -46,12 +48,30 @@ class ProductFull extends Component {
   }
 
   generateGallery() {
-      return (
-        <Gallery
-          headPhoto={this.state.headPhoto}
-          additionalPhotos={this.state.additionalPhotos}
-        />)
+    return (
+      <Gallery
+        headPhoto={this.state.headPhoto}
+        additionalPhotos={this.state.additionalPhotos}
+      />
+    )
   }
+
+  getYoutube(link) {
+    if (link) {
+      return (
+        <iframe
+          className='product-full-youtube'
+          height="315"
+          src={this.state.youtubeEmbedLink}
+          frameborder="0"
+          gesture="media"
+          allow="encrypted-media"
+          allowfullscreen>
+        </iframe>
+      )
+    }
+  }
+
 
   render() {
     return (
@@ -61,6 +81,7 @@ class ProductFull extends Component {
           {this.generateGallery()}
           {this.addReverbLink(this.state.reverbLink)}
           <p className='product-full-body' >{this.state.body}</p>
+          {this.getYoutube(this.state.youtubeEmbedLink)}
         </div>
       </div>
     )

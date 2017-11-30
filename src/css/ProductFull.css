@@ -46,6 +46,12 @@
   transition: background-color 200ms, color 200ms;
 }
 
+.product-full-youtube {
+  width: 560px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
 @media only screen and (max-width: 1000px) {
   .product-full {
     margin-left: 10px;
@@ -71,6 +77,11 @@
   }
   .product-full-body {
     padding: 20px 10px 40px 15px;
+  }
+  .product-full-youtube {
+    margin-left: 15px;
+    width: 352px;
+    height: 198px;
   }
 }
 
