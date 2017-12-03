@@ -48,8 +48,8 @@
 
 .product-full-youtube {
   width: 560px;
-  margin-left: 50px;
-  margin-bottom: 50px;
+  display: block;
+  margin: 0 auto 50px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -79,7 +79,6 @@
     padding: 20px 10px 40px 15px;
   }
   .product-full-youtube {
-    margin-left: 0;
     width: 100%;
   }
 }

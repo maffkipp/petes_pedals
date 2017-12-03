@@ -27,6 +27,8 @@ class App extends Component {
       data: [],
       toggledMenuClass: 'app-invisible'
     }
+    this.menuOpen = this.menuOpen.bind(this);
+    this.menuClose = this.menuClose.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
@@ -46,16 +48,20 @@ class App extends Component {
     });
   }
 
+  menuOpen() {
+    this.setState({
+      toggledMenuClass: 'app-menu-showing'
+    });
+  }
+
+  menuClose() {
+    this.setState({
+      toggledMenuClass: 'app-invisible'
+    });
+  }
+
   toggleMenu() {
-    if (this.state.toggledMenuClass === 'app-invisible') {
-      this.setState({
-        toggledMenuClass: 'app-menu-showing'
-      })
-    } else {
-      this.setState({
-        toggledMenuClass: 'app-invisible'
-      });
-    }
+    (this.state.toggledMenuClass === 'app-invisible') ? this.menuOpen() : this.menuClose();
   }
 
   render() {
@@ -71,23 +77,23 @@ class App extends Component {
               <button onClick={this.toggleMenu} className='app-icon-button'>
                 <span className='app-menu-icon fa fa-bars fa-2x'></span>
               </button>
-              <NavLink to='/repair' className={`app-navlink ${this.state.toggledMenuClass}`}>Repairs & Restorations</NavLink>
-              <NavLink to='/builds' className={`app-navlink ${this.state.toggledMenuClass}`}>Custom Pedals</NavLink>
-              <NavLink to='/mods' className={`app-navlink ${this.state.toggledMenuClass}`}>Mods</NavLink>
-              <NavLink to='/news' className={`app-navlink ${this.state.toggledMenuClass}`}>News</NavLink>
-              <NavLink to='/about' className={`app-navlink ${this.state.toggledMenuClass}`}>About</NavLink>
+              <NavLink to='/restorations' onClick={this.menuClose} className={`app-navlink ${this.state.toggledMenuClass}`}>Restorations</NavLink>
+              <NavLink to='/builds' onClick={this.menuClose} className={`app-navlink ${this.state.toggledMenuClass}`}>Custom Pedals</NavLink>
+              <NavLink to='/mods' onClick={this.menuClose} className={`app-navlink ${this.state.toggledMenuClass}`}>Mods</NavLink>
+              <NavLink to='/blog' onClick={this.menuClose} className={`app-navlink ${this.state.toggledMenuClass}`}>Repair Blog</NavLink>
+              <NavLink to='/about' onClick={this.menuClose} className={`app-navlink ${this.state.toggledMenuClass}`}>About</NavLink>
             </nav>
             <Switch>
               <Route exact path='/' component={(props) => <Home data={this.state.data} />} />
-              <Route exact path='/repair' component={(props) => <Repair data={this.state.data} />}/>
+              <Route exact path='/restorations' component={(props) => <Repair data={this.state.data} />}/>
               <Route exact path='/builds' component={(props) => <Builds data={this.state.data} />}/>
               <Route exact path='/mods' component={(props) => <Mods data={this.state.data} />}/>
-              <Route path='/news' component={(props) => <News data={this.state.data} />}/>
+              <Route path='/blog' component={(props) => <News data={this.state.data} />}/>
               <Route path='/about' component={About}/>
 
               <Route path='/builds/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
               <Route path='/mods/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
-              <Route path='/repair/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
+              <Route path='/restorations/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
               <Route path='/*' component={NotFound}/>
             </Switch>
           </div>

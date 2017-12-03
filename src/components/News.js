@@ -22,7 +22,7 @@ class News extends Component {
   render() {
     return(
       <div className='news'>
-        <h1>News</h1>
+        <h1>Repair Blog</h1>
         {this.createPosts(this.props.data)}
       </div>
     )

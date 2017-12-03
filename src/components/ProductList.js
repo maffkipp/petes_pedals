@@ -34,7 +34,7 @@ class ProductList extends Component {
     } else if (type === 'customPedals') {
       return 'builds';
     } else if (type === 'repairsAndRestorations') {
-      return 'repair';
+      return 'restorations';
     }
   }
 
