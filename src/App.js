@@ -98,6 +98,15 @@ class App extends Component {
             </Switch>
           </div>
         </HashRouter>
+        <footer className='app-footer'>
+          <a className='app-sm-link app-sm-link-fb' href='https://www.facebook.com/Petes-Pedals-St-Louis-1539987856307597/'>
+            <span className='fa fa-facebook-official fa-2x app-sm-icon'></span>
+          </a>
+          <a className='app-sm-link app-sm-link-yt' href='https://www.youtube.com/channel/UCqOxjewQAU3xmGT9zNVdrDA'>
+            <span className='fa fa-youtube-square fa-2x app-sm-icon'></span>
+          </a>
+          <p className='app-signature'>created 2017 by Wesley Maffly-Kipp.</p>
+        </footer>
       </div>
     );
   }

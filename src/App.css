@@ -4,11 +4,18 @@ html {
   overflow-y: scroll;
   width: 100%;
   min-height: 100%;
+  display: flex;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #EEEEEE;
+  flex-grow: 1;
+}
+
+#root {
+  display: flex;
+  min-height: 100%;
 }
 
 nav {
@@ -21,7 +28,7 @@ nav {
 }
 
 .app {
-  padding-bottom: 30px;
+  flex-grow: 1;
 }
 
 .app-navlink {
@@ -106,12 +113,73 @@ nav {
   width: 100%;
 }
 
+.app-footer {
+  position: static;
+  width: 100%;
+  bottom: 0px;
+  margin-top: 30px;
+  background-color: #F44336;
+  height: 30px;
+}
+
+.app-sm-link {
+  position: fixed;
+  top: 175px;
+  color: #F44336;
+  opacity: 0.5;
+  transition: top 200ms, opacity 200ms, border-bottom 200ms;
+}
+
+.app-sm-link:hover {
+  opacity: 1;
+  top: 170px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #F44336;
+  transition: top 200ms, opacity 200ms, border-bottom 200ms;
+}
+
+.app-sm-link-fb {
+  left: 45px;
+}
+
+.app-sm-link-yt {
+  left: 123px;
+}
+
+.app-signature {
+  position: relative;
+  text-align: right;
+  padding-top: 13px;
+  padding-right: 4px;
+  font-size: 10px;
+  color: #FAFAFA;
+}
+
 @media only screen and (max-width: 1000px) {
   .app-logo {
     display: none;
   }
   .app-title-link {
     left: 10px;
+  }
+  .app-sm-link {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    margin: 0 20px;
+    color: #FAFAFA;
+  }
+  .app-sm-link:hover {
+    bottom: 5px;
+    top: 0px;
+    border-bottom: none;
+  }
+  .app-footer {
+    text-align: center;
+  }
+  .app-signature {
+    display: none;
   }
 }
 

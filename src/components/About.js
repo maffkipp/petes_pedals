@@ -16,7 +16,8 @@ class About extends Component {
            not too many options for getting a guitar pedal repaired, either affordably or
            quickly.  So began Pete’s Pedals, and with a small ad in Craigslist I started
            seeing boxes full of pedals that had been laying in people’s closets, garages and
-           attics for years awaiting to play again.  In St Louis, half of my business is
+           attics for years awaiting to play again.</p>
+           <p className='about-body'>In St Louis, half of my business is
            repair and restoration.  But I also do mods and upgrades, following in the
            footsteps of Keeley and Wampler.  I have some very popular mods, and some one-offs
            on request.  I try to avoid extra switches and knobs, and I try to keep it
