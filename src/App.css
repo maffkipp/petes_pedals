@@ -61,15 +61,16 @@ nav {
   border: 3px solid #F44336;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   opacity: 0.8;
-  transition: height 200ms, width 200ms, box-shadow 200ms, opacity 200ms;
+  transition: height 200ms, width 200ms, box-shadow 200ms, opacity 200ms, left 200ms;
 }
 
 .app-logo:hover {
-  height: 155px;
-  width: 155px;
+  height: 156px;
+  width: 156px;
+  left: 12px;
   opacity: 1;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition: height 200ms, width 200ms, box-shadow 200ms, opacity 200ms;
+  transition: height 200ms, width 200ms, box-shadow 200ms, opacity 200ms, left 200ms;
 }
 
 .app-title-link {
@@ -141,11 +142,11 @@ nav {
 }
 
 .app-sm-link-fb {
-  left: 45px;
+  left: 40px;
 }
 
 .app-sm-link-yt {
-  left: 123px;
+  left: 115px;
 }
 
 .app-signature {
