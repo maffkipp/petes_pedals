@@ -47,9 +47,7 @@ class ProductFull extends Component {
   }
 
   convertMarkdownToHtml(markdown) {
-    console.log(markdown);
     let html = marked(markdown, { sanitize: true });
-    console.log(html);
     return html;
   }
 

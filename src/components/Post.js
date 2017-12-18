@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import '../css/Post.css';
 import moment from 'moment';
+import marked from 'marked';
 
 import Gallery from './Gallery.js';
 
 class Post extends Component {
+  constructor(props) {
+    super(props);
+    this.convertMarkdownToHtml = this.convertMarkdownToHtml.bind(this);
+  }
+
+  // converts and sanitizes markdown from contentful
+  convertMarkdownToHtml(markdown) {
+    let html = marked(markdown, { sanitize: true });
+    return html;
+  }
+
   render() {
     return(
       <article className='post'>
@@ -14,7 +26,12 @@ class Post extends Component {
           headPhoto={this.props.data.fields.headPhoto.fields.file.url}
           additionalPhotos={this.props.data.fields.additionalPhotos}
         />
-        <p className='post-body'>{this.props.data.fields.body}</p>
+        <div className='post-body'
+             dangerouslySetInnerHTML={
+              {__html: this.convertMarkdownToHtml(
+                this.props.data.fields.body
+              )}}
+        />
       </article>
     )
   }
