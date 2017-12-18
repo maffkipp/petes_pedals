@@ -5,7 +5,8 @@
 }
 
 .gallery-head-photo {
-  height: 300px;
+  max-height: 300px;
+  max-width: 350px;
   margin: 5px 5px 5px 0;
 }
 
