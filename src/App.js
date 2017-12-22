@@ -105,7 +105,11 @@ class App extends Component {
           <a className='app-sm-link app-sm-link-yt' href='https://www.youtube.com/channel/UCqOxjewQAU3xmGT9zNVdrDA'>
             <span className='fa fa-youtube-square fa-2x app-sm-icon'></span>
           </a>
-          <p className='app-signature'>created 2017 by Wesley Maffly-Kipp.</p>
+          <p className='app-signature'>
+            <a className='app-name-link' href='https://www.wesmk.com/'>
+              created 2017 by Wesley Maffly-Kipp.
+            </a>
+          </p>
         </footer>
       </div>
     );

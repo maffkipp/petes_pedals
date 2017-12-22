@@ -153,8 +153,19 @@ nav {
   position: absolute;
   bottom: -5px;
   right: 4px;
-  font-size: 10px;
+  font-size: 11px;
   color: #FAFAFA;
+}
+
+.app-name-link {
+  text-decoration: none;
+  color: #FAFAFA;
+  transition: text-decoration 200ms;
+}
+
+.app-name-link:hover {
+  text-decoration: underline;
+  transition: text-decoration 200ms;
 }
 
 @media only screen and (max-width: 1000px) {
