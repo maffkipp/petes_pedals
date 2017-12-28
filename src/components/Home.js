@@ -15,7 +15,7 @@ class Home extends Component {
           <a className='home-youtube' href='https://www.youtube.com/channel/UCqOxjewQAU3xmGT9zNVdrDA'>Find Me on Youtube</a>
         </div>
         <div className='home-container home-container-first'>
-          <HomeDisplay url='repair' color='red' name='Restorations' data={this.props.data} type='repairsAndRestorations'/>
+          <HomeDisplay url='restorations' color='red' name='Restorations' data={this.props.data} type='repairsAndRestorations'/>
           <HomeDisplay url='builds' color='white' name='Custom Pedals' data={this.props.data} type='customPedals'/>
         </div>
         <div className='home-container home-container-second'>

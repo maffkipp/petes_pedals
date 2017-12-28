@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {
-  HashRouter,
+  HashRouter as Router,
   Route,
   Switch,
   NavLink
@@ -17,6 +17,7 @@ import About from './components/About.js';
 
 import ProductFull from './components/ProductFull.js';
 
+import ScrollToTop from './components/ScrollToTop.js'
 import NotFound from './components/NotFound.js';
 
 // Top level component, contains navbar and primary router
@@ -49,26 +50,29 @@ class App extends Component {
   }
 
   menuOpen() {
+    // opens mobile menu
     this.setState({
       toggledMenuClass: 'app-menu-showing'
     });
   }
 
   menuClose() {
+    // closes mobile menu
     this.setState({
       toggledMenuClass: 'app-invisible'
     });
   }
 
   toggleMenu() {
+    // decides wether button opens or closes menu
     (this.state.toggledMenuClass === 'app-invisible') ? this.menuOpen() : this.menuClose();
   }
 
   render() {
     return (
       <div className="app">
-        <HashRouter>
-          <div>
+        <Router onUpdate={() => window.scrollTo(0, 0)}>
+          <ScrollToTop>
             <nav>
               <NavLink className='app-navlink app-homelink' exact to='/'>
                 <img className='app-logo' src={require('./images/logo.jpg')} alt='logo' />
@@ -96,8 +100,8 @@ class App extends Component {
               <Route path='/restorations/:id' component={(props) => <ProductFull propData={{...props}} data={this.state.data} />} />
               <Route path='/*' component={NotFound}/>
             </Switch>
-          </div>
-        </HashRouter>
+          </ScrollToTop>
+        </Router>
         <footer className='app-footer'>
           <a className='app-sm-link app-sm-link-fb' href='https://www.facebook.com/Petes-Pedals-St-Louis-1539987856307597/'>
             <span className='fa fa-facebook-official fa-2x app-sm-icon'></span>

@@ -14,20 +14,23 @@ class ProductList extends Component {
   }
 
   createProducts(results, type) {
-    // Format product data as Product components
-    let productsArray = results.map(result => {
-      if (result.sys.contentType.sys.id === this.props.type) {
-        return (
-          <Link className='product-list-link' key={result.sys.id} to={`/${type}/${result.sys.id}`}>
-            <Product data={result} />
-          </Link>
-        )
-      }
+    // make array of all products that match type prop
+    let productsArray = results.filter(result => {
+      return (result.sys.contentType.sys.id === this.props.type) ? true : false;
     });
-    return productsArray;
+    // Format product data as Product components
+    let posts = productsArray.map(product => {
+      return (
+        <Link className='product-list-link' key={product.sys.id} to={`/${type}/${product.sys.id}`}>
+          <Product data={product} />
+        </Link>
+      )
+    });
+    return posts;
   }
 
   defineType() {
+    // equates types with their contentful identifiers
     let type = this.props.type;
     if (type === 'moddedPedals') {
       return 'mods';

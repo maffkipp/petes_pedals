@@ -13,15 +13,17 @@ class News extends Component {
 
   createPosts(results) {
     let sortedData = this.sortByDate(results);
-    // Format data as Post components
-    let postArray = sortedData.map(result => {
-      if (result.sys.contentType.sys.id === 'news') {
-        return(
-          <Post key={result.sys.id} data={result} />
-        )
-      }
+    // make array of blog items only
+    let newsArray = sortedData.filter(function(result) {
+      return (result.sys.contentType.sys.id === 'news') ? true : false;
     });
-    return postArray;
+    // format as post components
+    let posts = newsArray.map(item => {
+      return(
+        <Post key={item.sys.id} data={item} />
+      )
+    });
+    return posts;
   }
 
   sortByDate(array) {

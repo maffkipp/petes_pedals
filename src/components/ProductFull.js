@@ -73,6 +73,7 @@ class ProductFull extends Component {
     if (link) {
       return (
         <iframe
+          title={this.state.youtubeEmbedLink}
           className='product-full-youtube'
           height="315"
           src={this.state.youtubeEmbedLink}
