@@ -3,6 +3,7 @@ import '../css/ProductFull.css';
 import marked from 'marked';
 
 import Gallery from './Gallery.js';
+import Paypal from './Paypal.js';
 
 // full page view of a product. all data is stored in state
 class ProductFull extends Component {
@@ -14,7 +15,8 @@ class ProductFull extends Component {
       title: '',
       body: '',
       reverbLink: '',
-      youtubeEmbedLink: ''
+      youtubeEmbedLink: '',
+      paypalLink: ''
     }
     this.getDataFromId = this.getDataFromId.bind(this);
     this.generateGallery = this.generateGallery.bind(this);
@@ -40,7 +42,8 @@ class ProductFull extends Component {
           title: result.fields.title,
           body: bodyHtml,
           reverbLink: result.fields.reverbLink,
-          youtubeEmbedLink: result.fields.youtubeEmbedLink
+          youtubeEmbedLink: result.fields.youtubeEmbedLink,
+          paypalLink: result.fields.paypalNumber
         });
       }
     });
@@ -55,6 +58,13 @@ class ProductFull extends Component {
   addReverbLink(link) {
     if (link) {
       return <a className='product-full-reverb' href={link}>Purchase on Reverb</a>
+    }
+  }
+
+  // if a paypal link is included, add the component to page
+  addPaypalLink(link) {
+    if (link) {
+      return <Paypal paypal={link} />
     }
   }
 
@@ -97,6 +107,7 @@ class ProductFull extends Component {
           <div className='product-full-body'
                dangerouslySetInnerHTML={{ __html: this.state.body}}
           />
+          {this.addPaypalLink(this.state.paypalLink)}
           {this.getYoutube(this.state.youtubeEmbedLink)}
         </div>
       </div>

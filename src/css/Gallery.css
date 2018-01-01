@@ -32,8 +32,8 @@
     margin: 20px 15px;
   }
   .gallery-head-photo {
-    width: 300px;
-    height: auto;
+    max-height: none;
+    max-width: 300px;
   }
   .gallery-additional-photo-container {
     flex-direction: row;
