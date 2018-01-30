@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 import '../css/Product.css';
 
+// single product in ProductList component
 class Product extends Component {
 
   shortenText(text) {
+    // limits text length to 249 characters
     if (text.length > 250) {
       return text.substring(0, 250) + '...';
     } else return text;

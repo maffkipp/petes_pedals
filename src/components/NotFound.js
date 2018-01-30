@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import '../css/NotFound.css';
+import React, { Component } from "react";
+import "../css/NotFound.css";
 
+// returns 404 page
 class NotFound extends Component {
   render() {
-    return(
-      <div className='not-found'>
+    return (
+      <div className="not-found">
         <h1>404 Page Not Found...</h1>
       </div>
-    )
+    );
   }
 }
 

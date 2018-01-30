@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import '../css/Post.css';
-import moment from 'moment';
-import marked from 'marked';
+import React, { Component } from "react";
+import "../css/Post.css";
+import moment from "moment";
+import marked from "marked";
 
-import Gallery from './Gallery.js';
+import Gallery from "./Gallery.js";
 
+// post in News component
 class Post extends Component {
   constructor(props) {
     super(props);
@@ -18,22 +19,24 @@ class Post extends Component {
   }
 
   render() {
-    return(
-      <article className='post'>
-        <h3 className='post-title'>{this.props.data.fields.title}</h3>
-        <p className='post-date'>{moment(this.props.data.fields.date).format('MMMM Do, YYYY')}</p>
+    return (
+      <article className="post">
+        <h3 className="post-title">{this.props.data.fields.title}</h3>
+        <p className="post-date">
+          {moment(this.props.data.fields.date).format("MMMM Do, YYYY")}
+        </p>
         <Gallery
           headPhoto={this.props.data.fields.headPhoto.fields.file.url}
           additionalPhotos={this.props.data.fields.additionalPhotos}
         />
-        <div className='post-body'
-             dangerouslySetInnerHTML={
-              {__html: this.convertMarkdownToHtml(
-                this.props.data.fields.body
-              )}}
+        <div
+          className="post-body"
+          dangerouslySetInnerHTML={{
+            __html: this.convertMarkdownToHtml(this.props.data.fields.body)
+          }}
         />
       </article>
-    )
+    );
   }
 }
 

@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import '../css/Mods.css';
+import React, { Component } from "react";
+import "../css/Mods.css";
 
-import ProductList from './ProductList.js';
+import ProductList from "./ProductList.js";
 
+// container for modded pedals list
 class Mods extends Component {
   render() {
-    return(
-      <div className='mods'>
+    return (
+      <div className="mods">
         <h1>Modded Pedals</h1>
-        <ProductList data={this.props.data} type='moddedPedals' />
+        <ProductList data={this.props.data} type="moddedPedals" />
       </div>
-    )
+    );
   }
 }
 

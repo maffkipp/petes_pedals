@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import Lightbox from 'react-images';
-import '../css/Gallery.css';
+import React, { Component } from "react";
+import Lightbox from "react-images";
+import "../css/Gallery.css";
 
+// Responsive photo gallery for product pages and blog
 class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
       lightboxIsOpen: false,
       currentImage: 0
-    }
+    };
     this.openLightbox = this.openLightbox.bind(this);
     this.closeLightbox = this.closeLightbox.bind(this);
     this.populateLightboxImages = this.populateLightboxImages.bind(this);
@@ -17,19 +18,21 @@ class Gallery extends Component {
   }
 
   populateAdditionalImages(photos) {
+    // returns an array of additional images that link to lightbox
     if (photos) {
       let value = 0;
       let photoArray = photos.map(photo => {
         if (photo.fields) {
           value++;
           return (
-          <a key={photo.sys.id} onClick={() => this.openLightbox(value)}>
-            <img
-              className='gallery-additional-photo gallery-hover'
-              src={photo.fields.file.url}
-              alt='#'
-            />
-          </a>)
+            <a key={photo.sys.id} onClick={() => this.openLightbox(value)}>
+              <img
+                className="gallery-additional-photo gallery-hover"
+                src={photo.fields.file.url}
+                alt="#"
+              />
+            </a>
+          );
         }
       });
       return photoArray;
@@ -37,15 +40,16 @@ class Gallery extends Component {
   }
 
   populateLightboxImages(photos) {
+    // returns an array of objects for each image to send to Lightbox as source
     if (photos) {
       let photoArray = photos.map(photo => {
         if (photo.fields) {
-          return {src: photo.fields.file.url}
+          return { src: photo.fields.file.url };
         }
       });
-      photoArray.unshift({src: this.props.headPhoto});
+      photoArray.unshift({ src: this.props.headPhoto });
       return photoArray;
-    } else return [{src: this.props.headPhoto}];
+    } else return [{ src: this.props.headPhoto }];
   }
 
   openLightbox(value) {
@@ -76,12 +80,16 @@ class Gallery extends Component {
 
   render() {
     const imageArray = this.populateLightboxImages(this.props.additionalPhotos);
+
     return (
-      <div className='gallery'>
+      <div className="gallery">
         <a onClick={() => this.openLightbox(0)}>
-          <img className='gallery-head-photo gallery-hover' src={this.props.headPhoto} />
+          <img
+            className="gallery-head-photo gallery-hover"
+            src={this.props.headPhoto}
+          />
         </a>
-        <div className='gallery-additional-photo-container'>
+        <div className="gallery-additional-photo-container">
           {this.populateAdditionalImages(this.props.additionalPhotos)}
         </div>
         <Lightbox
@@ -93,7 +101,7 @@ class Gallery extends Component {
           onClickPrev={this.gotoPrevLightboxImage}
         />
       </div>
-    )
+    );
   }
 }
 
