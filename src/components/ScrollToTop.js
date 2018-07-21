@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 // scrolls page back to top whenever router location changes

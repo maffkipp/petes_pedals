@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import '../css/Product.css';
+import imageQuality from '../imageHandling';
 
 // single product in ProductList component
 class Product extends Component {
@@ -17,7 +18,7 @@ class Product extends Component {
       <div className='product'>
         <img
           className='product-image'
-          src={this.props.data.fields.headPhoto.fields.file.url}
+          src={imageQuality(this.props.data.fields.headPhoto.fields.file.url, 10)}
           alt={this.props.data.fields.title}
         />
         <div className='product-text-container'>

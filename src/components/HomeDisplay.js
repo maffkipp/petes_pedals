@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../css/HomeDisplay.css";
 import { Link } from "react-router-dom";
 
+import imageQuality from '../imageHandling';
+
 // Displays 'most recent' links on home screen
 class HomeDisplay extends Component {
   constructor(props) {
@@ -26,7 +28,7 @@ class HomeDisplay extends Component {
     });
     if (firstData) {
       this.setState({
-        image: firstData.fields.headPhoto.fields.file.url,
+        image: imageQuality(firstData.fields.headPhoto.fields.file.url, 20),
         subtitle: firstData.fields.title,
         id: firstData.sys.id
       });

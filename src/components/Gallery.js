@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Lightbox from "react-images";
 import "../css/Gallery.css";
 
+import imageQuality from '../imageHandling';
+
 // Responsive photo gallery for product pages and blog
 class Gallery extends Component {
   constructor(props) {
@@ -28,7 +30,7 @@ class Gallery extends Component {
             <a key={photo.sys.id} onClick={() => this.openLightbox(value)}>
               <img
                 className="gallery-additional-photo gallery-hover"
-                src={photo.fields.file.url}
+                src={imageQuality(photo.fields.file.url, 20)}
                 alt="#"
               />
             </a>
@@ -86,7 +88,7 @@ class Gallery extends Component {
         <a onClick={() => this.openLightbox(0)}>
           <img
             className="gallery-head-photo gallery-hover"
-            src={this.props.headPhoto}
+            src={imageQuality(this.props.headPhoto, 20)}
           />
         </a>
         <div className="gallery-additional-photo-container">
